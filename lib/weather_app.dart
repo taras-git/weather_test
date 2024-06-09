@@ -15,18 +15,10 @@ class WeatherApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return RepositoryProvider.value(
       value: _weatherRepository,
-      child: const WeatherAppView(),
-    );
-  }
-}
-
-class WeatherAppView extends StatelessWidget {
-  const WeatherAppView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: WeatherScreen(),
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: WeatherScreen(),
+      ),
     );
   }
 }

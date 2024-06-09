@@ -14,7 +14,7 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   final TextEditingController _textController = TextEditingController();
 
-  String get _text => _textController.text;
+  String get _city => _textController.text;
 
   @override
   void dispose() {
@@ -43,7 +43,7 @@ class _SearchScreenState extends State<SearchScreen> {
           IconButton(
             key: const Key('searchPage_search_iconButton'),
             icon: const Icon(Icons.search, semanticLabel: 'Submit'),
-            onPressed: () => Navigator.of(context).pop(_text),
+            onPressed: () => Navigator.of(context).pop(_city),
           ),
         ],
       ),
