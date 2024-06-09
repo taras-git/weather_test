@@ -15,6 +15,7 @@ class ApiClient {
 
   static const _baseUrl = 'api.openweathermap.org';
   static const _path = 'data/2.5/weather';
+  static const appid = String.fromEnvironment('APPID');
 
   Future<CurrentWeather> getWeather({
     required String city,
@@ -24,7 +25,7 @@ class ApiClient {
       _path,
       {
         'q': city,
-        'appid': '70ab0584fe21e1097ca75aa108e8f5b1',
+        'appid': appid,
         'units': 'metric',
       },
     );

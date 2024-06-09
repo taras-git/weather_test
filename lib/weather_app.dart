@@ -25,9 +25,8 @@ class WeatherAppView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
-    return MaterialApp(
-      home: const WeatherScreen(),
+    return const MaterialApp(
+      home: WeatherScreen(),
     );
   }
 }
