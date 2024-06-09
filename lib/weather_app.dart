@@ -1,17 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/data/repository/weather_repository_impl.dart';
+import 'package:weather_app/presentation/weather_screen/weather_screen.dart';
 
 class WeatherApp extends StatelessWidget {
-  const WeatherApp({super.key});
+  const WeatherApp({
+    required WeatherRepositoryImpl weatherRepository,
+    super.key,
+  }) : _weatherRepository = weatherRepository;
+
+  final WeatherRepositoryImpl _weatherRepository;
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello Weather!'),
-        ),
-      ),
+    return RepositoryProvider.value(
+      value: _weatherRepository,
+      child: const WeatherAppView(),
+    );
+  }
+}
+
+class WeatherAppView extends StatelessWidget {
+  const WeatherAppView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+    return MaterialApp(
+      home: const WeatherScreen(),
     );
   }
 }
