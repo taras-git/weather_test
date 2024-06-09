@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:weather_app/data/model/location_model.dart';
 
 class WeatherModel extends Equatable {
   const WeatherModel({
@@ -7,7 +8,7 @@ class WeatherModel extends Equatable {
     required this.condition,
   });
 
-  final String location;
+  final LocationModel location;
   final double temperature;
   final String condition;
 

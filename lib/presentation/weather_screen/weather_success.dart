@@ -18,11 +18,12 @@ class WeatherSuccess extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Center(
-      child: Column(
+      child: Flex(
+        direction: Axis.vertical,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(height: 48),
           Text(
-            weather.location,
+            '${weather.location.city}, ${weather.location.country}',
             style: theme.textTheme.displayMedium?.copyWith(
               fontWeight: FontWeight.w200,
             ),

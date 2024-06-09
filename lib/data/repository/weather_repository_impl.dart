@@ -1,4 +1,5 @@
 import 'package:weather_app/api_service/api_client.dart';
+import 'package:weather_app/data/model/location_model.dart';
 
 import 'package:weather_app/data/model/weather_model.dart';
 import 'package:weather_app/data/repository/weather_repository.dart';
@@ -15,7 +16,10 @@ class WeatherRepositoryImpl extends WeatherRepository {
 
     return WeatherModel(
       temperature: currentWeather.main!.temp!,
-      location: currentWeather.name!,
+      location: LocationModel(
+        city: currentWeather.name!,
+        country: currentWeather.sys!.country!,
+      ),
       condition: currentWeather.weather![0].main!,
     );
   }

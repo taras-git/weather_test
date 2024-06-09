@@ -7,12 +7,16 @@ class WeatherFail extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
+      child: Flex(
+        direction: Axis.vertical,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            'Sorry, the search is not valid, please check the city name',
-            style: theme.textTheme.headlineSmall,
+          Padding(
+            padding: const EdgeInsets.all(22),
+            child: Text(
+              'Sorry, the search is not valid, please check the city name',
+              style: theme.textTheme.headlineSmall,
+            ),
           ),
         ],
       ),

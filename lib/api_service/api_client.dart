@@ -15,6 +15,7 @@ class ApiClient {
 
   static const _baseUrl = 'api.openweathermap.org';
   static const _path = 'data/2.5/weather';
+  // ignore: do_not_use_environment
   static const appid = String.fromEnvironment('APPID');
 
   Future<CurrentWeather> getWeather({
